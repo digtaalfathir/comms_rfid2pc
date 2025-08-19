@@ -1,5 +1,18 @@
 {
   "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
     "flask": "^0.2.10"
-  }
+  },
+  "name": "rfid2pc",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

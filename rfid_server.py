@@ -9,21 +9,22 @@ def handle_rfid():
     if not data:
         return jsonify({"error": "Invalid JSON"}), 400
 
-    if 'api_result' in data:
-        result = data['api_result']
-        print("\n=== API RESULT RECEIVED ===")
+    # if 'api_result' in data:
+    #     # result = data['api_result']
+    #     print("\n=== API RESULT RECEIVED ===")
+    #     print("\n======")
 
-        if 'status' in result:
-            print(f"[SUCCESS] Status: {result['status']}")
-            print(f"Response: {result['response']}")
-        elif 'error' in result:
-            print(f"[ERROR] {result['error']}")
+    #     # if 'status' in result:
+    #     #     print(f"[SUCCESS] Status: {result['status']}")
+    #     #     print(f"Response: {result['response']}")
+    #     # elif 'error' in result:
+    #     #     print(f"[ERROR] {result['error']}")
 
-        print(f"Original Payload: {result.get('original_payload', {})}")
-        print("===========================\n")
-        return jsonify({"message": "API result received"}), 200
+    #     # print(f"Original Payload: {result.get('original_payload', {})}")
+    #     # print("===========================\n")
+    #     return jsonify({"message": "API result received"}), 200
 
-    else:
+    if 'api_result' not in data:
         # Ini kemungkinan data batch biasa, bukan feedback dari API
         print("\n[INFO] Received tag batch:")
         print(data)
